@@ -3,10 +3,7 @@ kind: Kustomization
 metadata:
   name: mongodb
 
-namespace: dbs
-
-resources:
-- ./es.yaml
+namespace: argocd
 
 helmCharts:
   - name: mongodb
@@ -17,6 +14,3 @@ helmCharts:
     includeCRDs: true
     additionalValuesFiles:
       - values-01.yaml
-
-patches:
-  - path: ./patches/deployment.yaml

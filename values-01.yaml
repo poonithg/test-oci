@@ -1,20 +1,3 @@
 architecture: standalone
 
 fullnameOverride: "dke-mongodb"
-
-auth:
-  existingSecret: mongodb-db-creds
-  usernames:
-    - auditadmin
-  databases:
-    - auditdbadmin
-
-persistence:
-  size: 8Gi
-
-metrics:
-  enabled: true
-  serviceMonitor:
-    enabled: true
-    labels:
-      prometheus: default

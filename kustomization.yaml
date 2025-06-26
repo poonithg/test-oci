@@ -7,7 +7,7 @@ namespace: argocd
 
 helmCharts:
   - name: mongodb
-    repo: oci://repo.duokey.cloud/oci-repo-proxy/bitnamicharts/
+    repo: oci://repo.duokey.cloud/external-repos/bitnamicharts/
     releaseName: bitnami
     version: 13.18.5
     namespace: dbs

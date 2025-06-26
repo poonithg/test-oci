@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: mongodb
+
+namespace: dbs
+
+resources:
+- ./es.yaml
+
+helmCharts:
+  - name: mongodb
+    repo: oci://repo.duokey.cloud/oci-repo-proxy/bitnamicharts/
+    releaseName: bitnami
+    version: 13.18.5
+    namespace: dbs
+    includeCRDs: true
+    additionalValuesFiles:
+      - values-01.yaml
+
+patches:
+  - path: ./patches/deployment.yaml
